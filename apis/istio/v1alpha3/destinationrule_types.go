@@ -296,13 +296,13 @@ type ConsistentHashLB struct {
 	// It is required to specify exactly one of the fields as hash key:
 	// HTTPHeaderName, HTTPCookie, or UseSourceIP.
 	// Hash based on a specific HTTP header.
-	HTTPHeaderName string `json:"httpHeaderName,omitempty"`
+	HTTPHeaderName *string `json:"httpHeaderName,omitempty"`
 
 	// Hash based on HTTP cookie.
 	HTTPCookie *HTTPCookie `json:"httpCookie,omitempty"`
 
 	// Hash based on the source IP address.
-	UseSourceIP bool `json:"useSourceIp,omitempty"`
+	UseSourceIP *bool `json:"useSourceIp,omitempty"`
 
 	// The minimum number of virtual nodes to use for the hash
 	// ring. Defaults to 1024. Larger ring sizes result in more granular
